@@ -110,8 +110,8 @@ emailNewBody += '--' + emailBoundaryString + '--' + lineFeedType
 
 
 
-# Seed the PRNG. - Wozu?
-# Rand.load_file('randpool.dat', -1)
+# Seed the random number generator with 1024 random bytes (8192 bits).
+Rand.rand_seed (os.urandom (1024))
 
 # An invalid key is an error, tell user via X-Crypt-Header.
 try:
@@ -149,5 +149,3 @@ out.write (emailNonContentHeaders + lineFeedType)
 smimeObj.write (out, encryptedEmailBody)
 print out.read ()
 
-# Save the PRNG's state.
-# Rand.save_file('randpool.dat')
