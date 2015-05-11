@@ -3,9 +3,14 @@
 # Location of encrypt-smime.py
 SCRIPT=/path/to/encrypt-smime.py
 
+# Check command line arguments
+if [ "$#" -lt 2 ]; then
+    echo "This script needs at least two parameters (watched folder name and name of the new message)"
+    exit
+fi
+
 # Default location of pub.pem
 PEM=$1/../../pub.pem
-
 
 # User may provide specific location of pub.pem via 3rd parameter
 if [ "$#" -eq 3 ]; then
