@@ -1,5 +1,5 @@
 # encrypt-smime
-Automatically encrypting all incoming e-mails using an S/MIME certificate.
+Automatically encrypt all incoming e-mails using an S/MIME certificate.
 
 ## Why?
 Only a small percentage of incoming e-mails are encrypted, so almost all
